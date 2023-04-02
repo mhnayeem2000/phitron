@@ -1,4 +1,9 @@
 #include<stdio.h>
 int main(){
-    printf("Hello Programmers.");
+    int choice;
+    printf("Enter Your choise");
+    scanf("%d",&choice);
+
+    printf("Your choice is : %d",choice);
+
 }
