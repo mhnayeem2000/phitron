@@ -1,12 +1,13 @@
-//Arithmtic Operation
+//Arithmtic Operations
 #include<stdio.h>
 int main(){
-    int n1,n2,choice;
+    float n1,n2;
+    int choice;
     int sum = 0 ; 
     printf("Enter Your First Number : ");
-    scanf("%d",&n1);
+    scanf("%f",&n1);
     printf("Enter Your Second Number : ");
-    scanf("%d",&n2);
+    scanf("%f",&n2);
 
     while (1)
     {
@@ -15,19 +16,19 @@ int main(){
         scanf("%d",&choice);
         if(choice == 1){
             sum = n1+n2;
-            printf("Sum of %d and %d is : %d.",n1,n2,sum);
+            printf("Sum of %.2f and %.2f is : %d.",n1,n2,sum);
         }
         else if(choice == 2){
             int sub = n1-n2;
-            printf("Subtraction of %d and %d is : %d.",n1,n2,sub);
+            printf("Subtraction of %.2f and %.2f is : %d.",n1,n2,sub);
         }
         else if(choice == 3){
             int mul = n1*n2;
-            printf("Sum of %d and %d is : %d.",n1,n2,mul);
+            printf("Multiplication of %.2f and %.2f is : %d.",n1,n2,mul);
         }
         else if(choice == 4){
-            int div = n1/n2;
-            printf("Sum of %d and %d is : %d.",n1,n2,div);
+            float div = n1*1/n2;
+            printf("Divide of %.2f and %.2f is : %.2f.",n1,n2,div);
         }
         else if(choice > 4){
             
