@@ -27,8 +27,13 @@ int main(){
             printf("Multiplication of %.2f and %.2f is : %d.",n1,n2,mul);
         }
         else if(choice == 4){
-            float div = n1*1/n2;
+            if(n2 == 0){
+                printf("Division Is not Possible.");
+            }
+            else{
+                float div = n1*1/n2;
             printf("Divide of %.2f and %.2f is : %.2f.",n1,n2,div);
+            }
         }
         else if(choice > 4){
             
