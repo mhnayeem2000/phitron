@@ -4,7 +4,7 @@ int main(){
     printf("Enter A positive Value : ");
     scanf("%d",&n);
 
-    if(n > 0){
+    if(n >= 0){
         if(n % 2 == 0){
             printf("Even Number.");
         }else
