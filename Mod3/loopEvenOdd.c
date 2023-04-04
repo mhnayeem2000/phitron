@@ -1,3 +1,5 @@
+//author - Nayeem
+
 #include<stdio.h>
 int main(){
 
