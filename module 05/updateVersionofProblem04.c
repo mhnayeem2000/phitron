@@ -16,10 +16,10 @@ int main()
     
     int first = n / mul;
     if( first % 2 == 0 ){
-        printf("EVEN \n");
+        printf("EVEN\n");
     }
     else{
-        printf("ODD \n");
+        printf("ODD\n");
     }
   
     return 0;
