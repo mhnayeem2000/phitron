@@ -3,31 +3,29 @@ int main(){
     int a,b,c,d;
     scanf("%d%d%d%d",&a,&b,&c,&d);
     
-    if((a) + (b) + (c) == d){
-        printf("YES1");
-    }else if ((a) + (b) -(c) == d)
+    if ((a) + (b) -(c) == d)
     {
-        printf("YES2");
+        printf("YES");
     }
     else if ((a) - (b) + (c) == d)
     {
-        printf("YES3");
+        printf("YES");
     }
     else if ((a) +(b) * (c) == d)
     {
-        printf("YES4");
+        printf("YES");
     }
     else if ((a) * (b) + (c) == d)
     {
-        printf("YES5");
+        printf("YES");
     }
     else if ((a) - (b) * (c) == d)
     {
-        printf("YES6");
+        printf("YES");
     }
     else if ((a) * (b) - (c) == d)
     {
-        printf("YES7");
+        printf("YES");
     }
     else{
         printf("NO");
