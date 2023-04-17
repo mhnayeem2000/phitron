@@ -2,7 +2,8 @@
 #include<string.h>
 int main(){
 
-    char a[100] = "apple", b[100] ="MehediHassanNayeem";
+    char a[100], b[100];
+    scanf("%s %s",a,b);
     for(int i = 0 ; b[i] != '\0' ;i++ ){
         a[i] = b[i];
         
