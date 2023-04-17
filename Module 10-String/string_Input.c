@@ -7,5 +7,8 @@ int main(){
     fgets(ch1,100,stdin);
     printf("%s",ch1);
 
+    int sz = sizeof(ch1) / sizeof(char);
+    printf("%d",sz);
+
     return 0 ; 
 }
