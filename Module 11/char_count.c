@@ -8,7 +8,9 @@ int main(){
         count[ch[i] - 'a']++;
     }
     for(int i = 0 ; i < 26; i++){
-        printf("%c - %d\n",i+'a',count[i]);
+       if(count[i] != 0){
+         printf("%c - %d\n",i+'a',count[i]);
+       }
     }
 
     return 0 ;
