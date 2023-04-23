@@ -1,21 +1,22 @@
 #include<stdio.h>
 #include<string.h>
+
 int main(){
-  
-   int size;
-   scanf("%d",&size);
-    for(int i=0;i<size;i++){
-      char ch[102];
-      scanf("%s",ch);
-      size = strlen(ch);
-      if(size > 10){
-        printf("%c%d%c\n", ch[0],size-2,ch[size-1]);
+
+    char str[102];
+    int size;
+    scanf("%d", &size);
+    for(int i = 0; i < size; i++){
+        scanf("%s", str);
+        int csize = strlen(str);
+        if(csize > 10){
+            printf("%c%d%c\n",str[0],csize-2,str[csize -1]);
+        }else
+        {
+            printf("%s\n",str);
+        }
         
-      }else
-      {
-        printf("%s\n", ch);
-      }
-      
-    }  
-    return 0;
+    }
+
+    return 0 ; 
 }
