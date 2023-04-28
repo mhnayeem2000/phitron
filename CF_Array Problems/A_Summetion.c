@@ -1,8 +1,9 @@
 #include<stdio.h>
 
 int main(){
-    int size,sum = 0;
-    static int arr[10000000];
+    int size,arr[1000000];
+    long long int sum = 0;
+    
     scanf("%d",&size);
 
     for(int i = 0; i < size;i++){
@@ -12,7 +13,7 @@ int main(){
     if(sum < 0){
       sum = sum * (-1);
     }
-    printf("%d\n",sum);
+    printf("%lld\n",sum);
     
     return 0;
 }
