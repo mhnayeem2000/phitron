@@ -1,12 +1,12 @@
 #include<stdio.h>
-int arr[100000000];
+
 int main(){
     int size,sum = 0;
-
+    static int arr[10000000];
     scanf("%d",&size);
 
     for(int i = 0; i < size;i++){
-        scanf("%lld",&arr[i]);
+        scanf("%d",&arr[i]);
         sum = sum + arr[i];
     }
     if(sum < 0){
