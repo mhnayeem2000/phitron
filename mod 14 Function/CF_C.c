@@ -35,20 +35,23 @@ int main(){
      }
      
 
-   /*
+ 
+    /*
      printf("%d\n", bin);
 
     palindrome(bin);
     if( palindrome(bin) == -1 ){
-        printf("Not palindrome");
+        printf("Not palindrome\n");
     }else if (palindrome(bin) == 1)
     {
     printf("Palindrome\n");
     }
     
     printf("%d\n", odd(N));
+
+    */
    
-   */
+   
 
 
 
