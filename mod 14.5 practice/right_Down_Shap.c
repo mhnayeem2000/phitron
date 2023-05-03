@@ -1,3 +1,9 @@
+/*
+problem description: 
+Given a number N. Print a face down right angled triangle that has N rows.
+
+*/
+
 #include<stdio.h>
 int main(){
 
