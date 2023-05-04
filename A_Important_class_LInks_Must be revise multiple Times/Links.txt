@@ -1,2 +1,4 @@
 1. https://phitron.io/PH023/video/PH023-15-5-function-and-array
 2. https://phitron.io/PH023/video/PH023-15-4-array-and-pointer
+
+3. https://phitron.io/PH023/video/PH023-13-4-pattern-4
