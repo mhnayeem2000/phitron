@@ -9,8 +9,6 @@ int main(){
             scanf("%d",&arr[i][j]);
         }
     }
-
-    
     for(int j=0; j<col; j++){
         printf("%d ",arr[row-1][j]);
     }
@@ -19,11 +17,5 @@ int main(){
     for(int j=0; j<row; j++){
         printf("%d ",arr[j][col-1]);
     }
-
-
-       
-    
-
-
     return 0;
 }
