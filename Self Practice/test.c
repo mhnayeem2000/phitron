@@ -1,29 +1,19 @@
-#include<stdio.h>
-int main(){
+#include <stdio.h>
+#include <math.h>
 
-    int row, col;
-    scanf("%d %d",&row,&col);
-    int arr[row][col];
-    for(int i=0; i<row; i++){
-        for(int j=0; j<col; j++){
-            scanf("%d",&arr[i][j]);
+int main()
+{
+    int size;
+    scanf("%d", &size);
+
+    for(int i = 0; i < size; i++){
+        long long int n1,n2, sum = 0;
+        scanf("%lld %lld",&n1,&n2);
+        for(int i = n1; i <= n2; i++){
+            sum = sum + i;
         }
-    }
-
+        printf("%lld\n",sum);
+    }    
     
-    for(int j=0; j<col; j++){
-        printf("%d ",arr[row-1][j]);
-    }
-    printf("\n");
-
-    for(int j=0; j<row; j++){
-        printf("%d ",arr[j][col-1]);
-    }
-
-
-       
-    
-
-
-    return 0;
+   return 0;
 }
