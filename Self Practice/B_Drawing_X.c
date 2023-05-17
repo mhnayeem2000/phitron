@@ -1,11 +1,12 @@
 #include<stdio.h>
 int main(){
-    int num,fs,bs,x,j;
+    int num,mid;
     scanf("%d",&num);
-    
+    mid = (num+1)/2;
     for(int i=1; i<=num; i++){
         for(int j=1; j<=num; j++){
-            if( i ==  3 && j == 3) {
+            
+            if( i ==  mid && j == mid) {
                 printf("X");
             }
             else if(i==j){
