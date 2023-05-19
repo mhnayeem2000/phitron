@@ -1,7 +1,10 @@
 #include <stdio.h>
 int main()
 {
-     int size,arr[10000],val,count = 0;
+    int num;
+    scanf("%d",&num);
+    for(int j=1;j<=num;j++){
+        int size,arr[10000],val,count = 0;
         scanf("%d",&size);
         for(int i=1;i<=size;i++){
             scanf("%d",&arr[i]);
@@ -9,13 +12,15 @@ int main()
         scanf("%d",&val);
         for(int i=1;i<=size;i++){
            if( arr[i] == val ){
-            printf("Case : %d",i);
-            count ++;
+            printf("Case %d: %d\n",j,i);
+            count ++; 
+            break;
            }
         }
         if( count == 0 ){
-            printf("Not Found");
+            printf("Case %d: Not Found\n",j);
         }
+    }
     
    return 0;
 }
