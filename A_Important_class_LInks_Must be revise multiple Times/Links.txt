@@ -3,3 +3,8 @@
 
 3. https://phitron.io/PH023/video/PH023-13-4-pattern-4
 4.https://phitron.io/PH023/video/PH023-13-8-selection-sort
+5. https://phitron.io/PH023/video/PH023-14-8-pointers
+
+
+
+
