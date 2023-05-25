@@ -29,12 +29,4 @@ int main(){
     cout << nayeem.name << endl;
     return 0;
 }
-/*
-char name[100] = "Nayeem";
-    Student nayeem(1,45,'B',name);
-    cout << nayeem.id << endl;
-    cout << nayeem.roll << endl;
-    cout << nayeem.section << endl;
-    cout << nayeem.name << endl;
 
-*/
