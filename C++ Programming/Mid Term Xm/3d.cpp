@@ -21,10 +21,10 @@ int main(){
     int age1 = nayeem->age;
     int age2 = fahim->age;
     if( age1 > age2 ){
-        cout << "Nayeem is Bigger,His age is : " << age1<< " and Fahim's age is : " << age2 << endl;
+        cout << nayeem->name <<" : " <<  age1 <<  endl;
     }else if (age1 < age2)
     {
-         cout << "Fahim is Bigger,His age is : " << age2 << " and Nayeem's age is : " << age1 << endl;
+         cout << fahim->name <<" : " <<  age1 <<  endl;
     }else cout << "Both are Equeal" << endl;
     
     
