@@ -3,8 +3,9 @@ using namespace std;
 void print(stringstream & ss){
     string woed;
     if(ss >> woed){
-        cout << woed << endl;
+       
         print(ss);
+        cout << woed << endl;
     }
 }
 int main(){
