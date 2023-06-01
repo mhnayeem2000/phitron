@@ -12,9 +12,10 @@ int main(){
     int n ; cin >> n;
     student a[n];
     for(int i = 0; i < n; i++){
-        getline(cin,a[i].nm);
+        //getline(cin,a[i].nm);
+        cin >> a[i].nm;
         cin >> a[i].cls >> a[i].s >> a[i].math_marks >> a[i].eng_marks;
-        cin.ignore();
+        //cin.ignore();
     }
     for(int i = n-1; i >= 0; i--){
         cout << a[i].nm << " " << a[i].cls << " " << a[i].s << " " << a[i].math_marks << " " << a[i].eng_marks << endl;
