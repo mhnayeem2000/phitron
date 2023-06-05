@@ -9,7 +9,7 @@ int main(){
    v.push_back(5);
    v.push_back(6);
    v.resize(3);
-   v.resize(8);
+   v.resize(8,2);
    cout << v.size() << endl;
    for(int i=0; i<v.size(); i++){
     cout << v[i] << " ";
