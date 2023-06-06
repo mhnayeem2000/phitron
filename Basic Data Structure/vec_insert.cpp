@@ -7,4 +7,5 @@ int main(){
     for(int x:v){
         cout << x << " ";
     }
+    return 0;
 }
