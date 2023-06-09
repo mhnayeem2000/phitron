@@ -9,7 +9,7 @@ int main(){
     }
     int x;
     cin >> x;
-    int l = 0 ;
+    int l = 0 ; 
     int r =  n - 1;
     bool flag = false;
     while( l <= r){
