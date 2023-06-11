@@ -11,5 +11,8 @@ int main(){
     b.data = 20;
     a.next =  &b;
     b.next = NULL;
+
+    cout << a.data << endl;
+    cout << a.next->data << endl;
     return 0; 
 }
