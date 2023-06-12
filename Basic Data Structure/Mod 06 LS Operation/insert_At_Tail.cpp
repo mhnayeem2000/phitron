@@ -21,13 +21,21 @@ void inset_At_Tail(Node * &node,int data){
     }
     temp->next = newNode;
 }
+void print_linked_List(Node *head){
+    Node *temp = head;
+    while(temp != NULL){
+        cout << temp->next << " " << endl;
+        temp = temp->next;
+    }
+}
 int main(){
     Node * head = NULL;
     cout << "1. Inset At Tail" << endl;
     int op;
     cin >> op;
     if(op == 1){
-
+        int v;cin >> v;
+        inset_At_Tail(head, v);
     }
 
     return 0;
