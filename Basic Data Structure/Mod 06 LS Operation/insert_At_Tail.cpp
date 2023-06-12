@@ -30,18 +30,29 @@ void print_linked_List(Node *head){
         temp = temp->next;
       
     }
+    cout << endl;
 }
 int main(){
     Node * head = NULL;
-    cout << "1. Inset At Tail" << endl;
-    cout << "Select Option : ";
-    int op;
-    cin >> op;
-    if(op == 1){
-        cout << "Please Enter Value :";
-        int v;cin >> v;
-        inset_At_Tail(head, v);
+    while(true){
+        cout << "1. Inset At Tail" << endl;
+        cout << "2. Print Linked List." << endl;
+        cout << "3. Exit" << endl;
+        cout << "Select Option : ";
+        int op;
+        cin >> op;
+        if(op == 1){
+            cout << "Please Enter Value :";
+            int v;cin >> v;
+            inset_At_Tail(head, v);
+        }else if (op == 2)
+        {
+            print_linked_List(head);
+        }else if (op == 3){
+            break;
+        }
+        
+       
     }
-    print_linked_List(head);
     return 0;
 }
