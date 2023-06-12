@@ -41,13 +41,20 @@ void insert_any_pos(Node *head, int pos , int data){
     newNode->next = temp->next;
     temp->next = newNode;
 }
+
+void insert_first(Node * &head,int data){
+    Node * newNode = new Node(data);
+    newNode->next = head;
+    head = newNode;
+}
 int main(){
     Node * head = NULL;
     while(true){
         cout << "1. Inset At Tail" << endl;
-        cout << "2. Print Linked List." << endl;
-        cout << "3.Insert Any position." << endl;
-        cout << "4. Exit" << endl;
+        cout << "2. Print Linked List" << endl;
+        cout << "3.Insert Any position" << endl;
+        cout << "4.Insert First Position" << endl;
+        cout << "5. Exit" << endl;
         cout << "Select Option : ";
         int op;
         cin >> op;
@@ -65,8 +72,15 @@ int main(){
             cout << "Entet Value : " << endl;
             cin >> data;
             insert_any_pos(head,pos,data);
+        }else if (op == 4)
+        {
+            int data;
+            cout << "Entet Value : ";
+            cin >> data;
+            insert_first(head,data);
         }
-        else if (op == 4){
+        
+        else if (op == 5){
             break;
         }
         
