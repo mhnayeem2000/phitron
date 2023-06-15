@@ -22,7 +22,7 @@ void inset_At_Tail(Node * &head,int data){
     }
     temp->next = newNode;
 }
-void print_linked_List(Node *head){
+void print_linked_List(Node *head){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     cout << "Your Lined List :";
     Node *temp = head;
     while(temp != NULL){
