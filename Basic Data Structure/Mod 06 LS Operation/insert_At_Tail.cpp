@@ -22,6 +22,17 @@ void inset_At_Tail(Node * &head,int data){
     }
     temp->next = newNode;
 }
+
+void sort_list(Node* head) {
+    
+    for (Node* i = head; i->next != NULL; i = i->next) {
+        for (Node* j = i->next; j != NULL; j = j->next) {
+            if (i->data < j->data) {
+                swap(i->data, j->data);
+            }
+        }
+    }
+}
 void print_linked_List(Node *head){
     cout << "Your Lined List :";
     Node *temp = head;
@@ -47,6 +58,7 @@ int main(){
             inset_At_Tail(head, v);
         }else if (op == 2)
         {
+            sort_list(head);
             print_linked_List(head);
         }else if (op == 3){
             break;
