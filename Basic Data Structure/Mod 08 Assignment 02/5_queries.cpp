@@ -36,12 +36,13 @@ void add_list_head(Node*& head,Node * &tail, int data) {
 void print_list(Node* head, Node* tail) {
     Node* temp = head;
     while (temp != NULL) {
-        cout << temp->data << " ";
+        //cout << temp->data << " ";
         temp = temp->next;
     }
-    cout << endl;
-    cout << "Head: " << head->data << endl;
-    cout << "Tail: " << tail->data << endl;
+    //cout << endl;
+    cout  << head->data << " " ;
+    cout << tail->data ;
+    //cout << endl;
 }
 
 int main() {
