@@ -42,7 +42,7 @@ void print_list(Node* head, Node* tail) {
     //cout << endl;
     cout  << head->data << " " ;
     cout << tail->data ;
-    //cout << endl;
+    cout << endl;
 }
 
 int main() {
