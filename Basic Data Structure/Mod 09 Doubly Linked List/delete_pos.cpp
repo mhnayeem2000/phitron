@@ -35,9 +35,10 @@ void delete_pos(Node * head,int pos){
     for(int i = 1; i <= pos-1; i++){
         temp = temp->next;
     }
-
+    Node * deleteNode = temp->next;
     temp->next = temp->next->next;
     temp->next->prev = temp;
+    delete deleteNode;
 }
 void print_list(Node * head){
     Node * temp = head;
