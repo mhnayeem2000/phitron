@@ -52,7 +52,18 @@ void tail_insertion(Node*& head, Node*& tail, int val) {
     tail = newNode;
 }
 
+void print_any_pos(Node * head,Node * tail,int pos, int data){
+    Node * newNode = new Node(data);
+    Node * temp = head;
+    for(int i = 1; i <= pos-1; i++){
+        temp = temp->next;
+    }
 
+    newNode->next = temp->next;
+    temp->next = newNode;
+    newNode->next->prev = newNode;
+    newNode->prev = temp;
+}
 
 
 int size(Node* head) {
