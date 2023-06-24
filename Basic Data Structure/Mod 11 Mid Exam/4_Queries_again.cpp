@@ -12,6 +12,15 @@ public:
         this->next = NULL;
     }
 };
+int size(Node* head) {
+    Node* temp = head;
+    int count = 0;
+    while (temp != NULL) {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
 
 void head_insertion(Node*& head, Node*& tail, int val) {
     Node* newNode = new Node(val);
@@ -24,6 +33,18 @@ void head_insertion(Node*& head, Node*& tail, int val) {
     head->prev = newNode;
     head = newNode;
 }
+void tail_insertion(Node*& head, Node*& tail, int val) {
+    Node* newNode = new Node(val);
+    if(tail == NULL){
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+    tail->next = newNode;
+    newNode->prev = tail;
+    tail = tail->next;
+}
+
 
 void print_list_forward(Node* head) {
     Node* temp = head;
@@ -37,7 +58,7 @@ void print_list_forward(Node* head) {
 
 void print_list_backward(Node* tail) {
     Node* temp = tail;
-     cout << "R -> ";
+    cout << "R -> ";
     while (temp != NULL) {
         cout << temp->val << " ";
         temp = temp->prev;
@@ -45,43 +66,18 @@ void print_list_backward(Node* tail) {
     cout << endl;
 }
 
-void insert_at_index(Node*& head, Node*& tail, int index, int val) {
-    if (index < 0) {
-        cout << "Invalid" << endl;
-        return;
-    }
-    if (index == 0) {
-        head_insertion(head, tail, val);
-    } else {
-        Node* newNode = new Node(val);
-        Node* temp = head;
-        int currentIndex = 1;  // Start at index 1 since we already checked index 0
-
-        while (temp != NULL && currentIndex < index) {
-            temp = temp->next;
-            currentIndex++;
-        }
-
-        if (temp == NULL) {
-            cout << "Invalid" << endl;
-            return;
-        }
-
-        newNode->next = temp->next;
-        temp->next = newNode;
-        newNode->prev = temp;
-
-        if (newNode->next != NULL) {
-            newNode->next->prev = newNode;
-        }
-
-        if (temp == tail) {
-            tail = newNode;
-        }
+void insert_any_pos(Node * head,Node * tail,int pos, int val){
+    Node * newNode = new Node(val);
+    Node * temp = head;
+    
+    for(int i = 1; i <= pos-1; i++){
+        temp = temp->next;
     }
 
-    print_list_forward(head);
-    print_list_backward(tail);
+    newNode->next = temp->next;
+    temp->next = newNode;
+    newNode->next->prev = newNode;
+    newNode->prev = temp;
 }
 
 
@@ -95,8 +91,24 @@ int main() {
     for (int i = 0; i < Q; i++) {
         int X, V;
         cin >> X >> V;
-        insert_at_index(head, tail, X, V);
-    }
 
+        if(X == 0)
+        {
+            head_insertion(head,tail,V);
+        }else if (X == size(head))
+        {
+            tail_insertion(head,tail,V);
+        }
+        else if(X >= size(head)){
+            cout << "Invalid" << endl;
+            break;
+        }else {
+            insert_any_pos(head,tail,X,V);
+        }
+        if( head != NULL ){
+            print_list_forward(head);
+            print_list_backward(tail);
+        }
+    }
     return 0;
 }

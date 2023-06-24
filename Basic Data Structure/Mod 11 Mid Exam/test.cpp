@@ -35,6 +35,11 @@ void head_insertion(Node*& head, Node*& tail, int val) {
 }
 void tail_insertion(Node*& head, Node*& tail, int val) {
     Node* newNode = new Node(val);
+    if(tail == NULL){
+        head = newNode;
+        tail = newNode;
+        return;
+    }
     tail->next = newNode;
     newNode->prev = tail;
     tail = tail->next;
@@ -96,11 +101,14 @@ int main() {
         }
         else if(X >= size(head)){
             cout << "Invalid" << endl;
+            break;
         }else {
             insert_any_pos(head,tail,X,V);
         }
-        print_list_forward(head);
-        print_list_backward(tail);
+        if( head != NULL ){
+            print_list_forward(head);
+            print_list_backward(tail);
+        }
     }
     return 0;
 }
