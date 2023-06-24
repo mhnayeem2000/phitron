@@ -24,27 +24,6 @@ void head_insertion(Node*& head, Node*& tail, int val) {
     head->prev = newNode;
     head = newNode;
 }
-
-void print_list_forward(Node* head) {
-    Node* temp = head;
-    cout << "L -> ";
-    while (temp != NULL) {
-        cout  <<  temp->val << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-}
-
-void print_list_backward(Node* tail) {
-    Node* temp = tail;
-    cout << "R -> ";
-    while (temp != NULL) {
-        cout << temp->val << " ";
-        temp = temp->prev;
-    }
-    cout << endl;
-}
-
 void tail_insertion(Node*& head, Node*& tail, int val) {
     Node* newNode = new Node(val);
     tail->next = newNode;
@@ -63,6 +42,25 @@ void print_any_pos(Node * head,Node * tail,int pos, int data){
     temp->next = newNode;
     newNode->next->prev = newNode;
     newNode->prev = temp;
+}
+void print_list_forward(Node* head) {
+    Node* temp = head;
+    cout << "L -> ";
+    while (temp != NULL) {
+        cout  <<  temp->val << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+void print_list_backward(Node* tail) {
+    Node* temp = tail;
+    cout << "R -> ";
+    while (temp != NULL) {
+        cout << temp->val << " ";
+        temp = temp->prev;
+    }
+    cout << endl;
 }
 
 
