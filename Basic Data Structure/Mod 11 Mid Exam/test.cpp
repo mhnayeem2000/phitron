@@ -12,6 +12,15 @@ public:
         this->next = NULL;
     }
 };
+int size(Node* head) {
+    Node* temp = head;
+    int count = 0;
+    while (temp != NULL) {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
 
 void head_insertion(Node*& head, Node*& tail, int val) {
     Node* newNode = new Node(val);
@@ -28,21 +37,10 @@ void tail_insertion(Node*& head, Node*& tail, int val) {
     Node* newNode = new Node(val);
     tail->next = newNode;
     newNode->prev = tail;
-    tail = newNode;
+    tail = tail->next;
 }
 
-void print_any_pos(Node * head,Node * tail,int pos, int data){
-    Node * newNode = new Node(data);
-    Node * temp = head;
-    for(int i = 1; i <= pos-1; i++){
-        temp = temp->next;
-    }
 
-    newNode->next = temp->next;
-    temp->next = newNode;
-    newNode->next->prev = newNode;
-    newNode->prev = temp;
-}
 void print_list_forward(Node* head) {
     Node* temp = head;
     cout << "L -> ";
@@ -63,16 +61,20 @@ void print_list_backward(Node* tail) {
     cout << endl;
 }
 
-
-int size(Node* head) {
-    Node* temp = head;
-    int count = 0;
-    while (temp != NULL) {
-        count++;
+void insert_any_pos(Node * head,Node * tail,int pos, int val){
+    Node * newNode = new Node(val);
+    Node * temp = head;
+    
+    for(int i = 1; i <= pos-1; i++){
         temp = temp->next;
     }
-    return count;
+
+    newNode->next = temp->next;
+    temp->next = newNode;
+    newNode->next->prev = newNode;
+    newNode->prev = temp;
 }
+
 
 int main() {
     Node* head = NULL;
@@ -84,8 +86,21 @@ int main() {
     for (int i = 0; i < Q; i++) {
         int X, V;
         cin >> X >> V;
-       
-    }
 
+        if(X == 0)
+        {
+            head_insertion(head,tail,V);
+        }else if (X == size(head))
+        {
+            tail_insertion(head,tail,V);
+        }
+        else if(X >= size(head)){
+            cout << "Invalid" << endl;
+        }else {
+            insert_any_pos(head,tail,X,V);
+        }
+        print_list_forward(head);
+        print_list_backward(tail);
+    }
     return 0;
 }
