@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-class myStack(){
+class myStack{
     public: 
-    vector<int> v;
+    vector <int> v;
     void push(int val){
         v.push_back(val);
     }
@@ -20,7 +20,7 @@ class myStack(){
         else return false;
     }
 };
-in main(){
+int main(){
     myStack st;
     st.push(10);
     st.push(20);
