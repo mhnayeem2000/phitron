@@ -6,22 +6,24 @@ class myStack(){
     void push(int val){
         v.push_back(val);
     }
-    void pop(int val){
-        v.pop_back(val);
+    void pop(){
+        v.pop_back();
     }
-    int size(int val){
-        return v.size(val);
+    int size(){
+        return v.size();
     }
-    int top(int val){
-        return v.back(val);
+    int top(){
+        return v.back();
     }
-    bool empty(int val){
-        if(v.size(val) == 0) return true;
+    bool empty(){
+        if(v.size() == 0) return true;
         else return false;
     }
 };
 in main(){
     myStack st;
     st.push(10);
+    st.push(20);
+    cout << st.top() << endl;
     return 0;
 }
