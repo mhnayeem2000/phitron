@@ -30,21 +30,27 @@ int main(){
         cin >> val;
         st.push(val);
     }
-    while(!st.isempty()){
-        cout << st.top() << endl;
-        st.pop();
-    }
     cin >> size2;
     for(int i=0; i<size2; i++){
         int val;
         cin >> val;
         st2.push(val);
     }
-    while(!st2.isempty()){
-        cout << st2.top() << endl;
-        st2.pop();
-    } 
 
+    if( st.size() == st2.size() ){
+        while(!st.isempty()){
+            if(st.top() == st2.top()){
+                st.pop();
+                st2.pop();
+                cout << "YES" << endl;
+            }else cout << "NO" << endl;break;
+        }
+        
+    }else
+    {
+        cout << "NO" << endl;
+    }
+    
 
     return 0; 
 }
