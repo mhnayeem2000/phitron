@@ -20,6 +20,8 @@ class myStack{
         else return false;
     }
 };
+
+// to much comment
 int main(){
     myStack st;
     myStack st2;
