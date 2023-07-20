@@ -1,6 +1,6 @@
-stack <char> st;
+stack<char> st;
 for( char c:s){
-    if( c == '(' && c == '{' && c == '['){
+    if( c == '(' || c == '{' || c == '['){
         st.push(c);
     }
     else {
@@ -11,11 +11,11 @@ for( char c:s){
             if( c ==')' && st.top() == '('){
                 st.pop();
             }
-            else if (c == '}' && st.top() == '}')
+            else if (c == '}' && st.top() == '{')
             {
                 st.pop();
             }
-            else if ( c == ']' && st.top() == ' ]')
+            else if ( c == ']' && st.top() == '[')
             {
                 st.pop();
             }
@@ -26,4 +26,4 @@ for( char c:s){
     }
 }
 
-return st.empty() ;
+return st.empty();
