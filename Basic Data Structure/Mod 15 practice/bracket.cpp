@@ -8,7 +8,7 @@ for( char c:s){
             return false;
         }
         else{
-            if( c ==')' && st.top() == '('){
+            if(c ==')' && st.top() == '('){
                 st.pop();
             }
             else if (c == '}' && st.top() == '{')
