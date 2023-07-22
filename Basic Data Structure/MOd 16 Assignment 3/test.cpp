@@ -1,10 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    stack <int> st;
     queue<int> q;
-    int sizes, sizeq;
-    cin >> sizes >> sizeq;
+    int size;
+    cin >> size;
     for (int i = 0; i < sizes; i++) {
         int val;
         cin >> val;
