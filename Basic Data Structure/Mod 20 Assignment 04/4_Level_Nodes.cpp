@@ -47,9 +47,9 @@ Node* input_tree(){
     return root;
 }
 vector<int> v;
-void level_nodes(Node * root){
+void level_nodes(Node * root,int lnumber){
     queue<pair<Node * ,int>> q;
-    q.push();
+    q.push({root,0});
     while(!q.empty()){
         pair<Node * ,int> f = q.front();
         q.pop();
@@ -66,6 +66,8 @@ void level_nodes(Node * root){
 }
 int main(){
     Node * root = input_tree();
+    int lnumber;
+    cin >> lnumber;
     level_nodes(root);
     return 0;
 }
