@@ -47,9 +47,10 @@ Node* input_tree(){
     return root;
 }
 vector<int> v;
-void level_nodes(Node * root,int lnumber){
+bool level_nodes(Node * root,int lnumber){
     queue<pair<Node * ,int>> q;
     q.push({root,0});
+    bool lvlx = false;
     while(!q.empty()){
         pair<Node * ,int> f = q.front();
         q.pop();
@@ -57,17 +58,29 @@ void level_nodes(Node * root,int lnumber){
         int l = f.second;
 
         if(lnumber == l ){
-            v.push_back(n.val);
+            v.push_back(n->val);
+            lvlx = true;
         }
-
-        if(n->right) q.push({n->right,l+1});
         if(n->left) q.push({n->left,l+1});
+        if(n->right) q.push({n->right,l+1});
+       
     }
+    return lvlx;
+
 }
 int main(){
     Node * root = input_tree();
     int lnumber;
     cin >> lnumber;
-    level_nodes(root);
+
+    if(!level_nodes(root,lnumber)){
+        cout << "Invalid" << endl;
+    }else {
+            for(auto val : v){
+            cout << val << " ";
+        }
+    }
+    
+
     return 0;
 }
