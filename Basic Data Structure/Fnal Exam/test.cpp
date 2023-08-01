@@ -1,30 +1,51 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
 
 int main() {
-    int size;
-    cin >> size;
-    while (size--) {
-        int n;
-        cin >> n;
-        int arr[n];
-        for (int i = 0; i < n; i++) {
-            cin >> arr[i];
-        }
-        map<int, int> fr;
-        for (int i = 0; i < n; i++) {
-            fr[arr[i]]++;
-        }
-        int maxV = arr[0];
-        int maxCt = fr[arr[0]];
-        for (int i = 1; i < n; i++) {
-            if (fr[arr[i]] > maxCt || (fr[arr[i]] == maxCt && arr[i] > maxV)) {
-                maxV = arr[i];
-                maxCt = fr[arr[i]];
+    int N, Q;
+    cin >> N;
+
+    // Create a min-heap
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+
+    for (int i = 0; i < N; i++) {
+        int num;
+        cin >> num;
+        minHeap.push(num);
+    }
+
+    cin >> Q;
+
+    for (int i = 0; i < Q; i++) {
+        int command;
+        cin >> command;
+
+        if (command == 0) {
+            int X;
+            cin >> X;
+            minHeap.push(X);
+            cout << minHeap.top() << endl;
+        } else if (command == 1) {
+            if (minHeap.empty()) {
+                cout << "Empty" << endl;
+            } else {
+                cout << minHeap.top() << endl;
+            }
+        } else if (command == 2) {
+            if (minHeap.empty()) {
+                cout << "Empty" << endl;
+            } else {
+                minHeap.pop();
+                if (minHeap.empty()) {
+                    cout << "Empty" << endl;
+                } else {
+                    cout << minHeap.top() << endl;
+                }
             }
         }
-
-        cout  << maxV << " "<<  maxCt << endl;
     }
+
     return 0;
 }
