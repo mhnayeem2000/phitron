@@ -1,19 +1,16 @@
-#include <iostream>
-#include <queue>
-#include <vector>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main() {
     int N, Q;
     cin >> N;
 
-    // Create a min-heap
-    priority_queue<int, vector<int>, greater<int>> minHeap;
+    priority_queue<int, vector<int>, greater<int>> pq;
 
     for (int i = 0; i < N; i++) {
         int num;
         cin >> num;
-        minHeap.push(num);
+        pq.push(num);
     }
 
     cin >> Q;
@@ -25,23 +22,23 @@ int main() {
         if (command == 0) {
             int X;
             cin >> X;
-            minHeap.push(X);
-            cout << minHeap.top() << endl;
+            pq.push(X);
+            cout << pq.top() << endl;
         } else if (command == 1) {
-            if (minHeap.empty()) {
+            if (pq.empty()) {
                 cout << "Empty" << endl;
             } else {
-                cout << minHeap.top() << endl;
+                cout << pq.top() << endl;
             }
         } else if (command == 2) {
-            if (minHeap.empty()) {
+            if (pq.empty()) {
                 cout << "Empty" << endl;
             } else {
-                minHeap.pop();
-                if (minHeap.empty()) {
+                pq.pop();
+                if (pq.empty()) {
                     cout << "Empty" << endl;
                 } else {
-                    cout << minHeap.top() << endl;
+                    cout << pq.top() << endl;
                 }
             }
         }
