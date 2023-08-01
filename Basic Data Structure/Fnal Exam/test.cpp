@@ -1,47 +1,38 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int N, Q;
-    cin >> N;
-
-    priority_queue<int, vector<int>, greater<int>> pq;
-
-    for (int i = 0; i < N; i++) {
-        int num;
-        cin >> num;
-        pq.push(num);
+   pair<int, int> most_frequent_value(std::vector<int>& arr) {
+    std::unordered_map<int, int> counts;
+    for (int num : arr) {
+        counts[num]++;
     }
 
-    cin >> Q;
-
-    for (int i = 0; i < Q; i++) {
-        int command;
-        cin >> command;
-
-        if (command == 0) {
-            int X;
-            cin >> X;
-            pq.push(X);
-            cout << pq.top() << endl;
-        } else if (command == 1) {
-            if (pq.empty()) {
-                cout << "Empty" << endl;
-            } else {
-                cout << pq.top() << endl;
-            }
-        } else if (command == 2) {
-            if (pq.empty()) {
-                cout << "Empty" << endl;
-            } else {
-                pq.pop();
-                if (pq.empty()) {
-                    cout << "Empty" << endl;
-                } else {
-                    cout << pq.top() << endl;
-                }
-            }
+    int max_count = 0;
+    int most_frequent = 0;
+    for (const auto& entry : counts) {
+        if (entry.second > max_count || (entry.second == max_count && entry.first > most_frequent)) {
+            max_count = entry.second;
+            most_frequent = entry.first;
         }
+    }
+
+    return std::make_pair(most_frequent, max_count);
+}
+
+int main() {
+    int T;
+    std::cin >> T;
+
+    for (int t = 0; t < T; ++t) {
+        int N;
+        std::cin >> N;
+        std::vector<int> arr(N);
+        for (int i = 0; i < N; ++i) {
+            std::cin >> arr[i];
+        }
+
+        std::pair<int, int> result = most_frequent_value(arr);
+        std::cout << result.first << " " << result.second << std::endl;
     }
 
     return 0;

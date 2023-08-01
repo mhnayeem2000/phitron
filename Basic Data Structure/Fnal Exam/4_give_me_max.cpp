@@ -26,9 +26,9 @@ int main() {
     priority_queue<Student, vector<Student>, cmp> pq;
 
     for (int i = 0; i < N; i++) {
-        Student student;
-        cin >> student.name >> student.roll >> student.marks;
-        pq.push(student);
+        Student st;
+        cin >> st.name >> st.roll >> st.marks;
+        pq.push(st);
     }
 
     int Q;
@@ -63,4 +63,3 @@ int main() {
 
     return 0;
 }
-i want to 
