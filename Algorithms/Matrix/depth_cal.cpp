@@ -14,6 +14,9 @@ void dfs( int u){
         if(  visited[v] ) continue;
         depth[v] = depth[u]+1;
         dfs(v);
+        if( height[v] +1 > height[u] ){
+            height[u] = height[v]+1;
+        }
     }
 }
 
@@ -30,6 +33,9 @@ int main(){
     dfs(1);
     for( int i = 1 ; i <= n; i++){
         cout << "Depth "<< i << " : " << depth[i] << " " << endl;
+    }
+    for( int i = 1 ; i <= n; i++){
+        cout << "Height "<< i << " : " << height[i] << " " << endl;
     }
     return 0;
 }
