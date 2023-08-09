@@ -15,7 +15,16 @@ bool dfs( int u,int p){
     return iscycle;
 }
 
-
+bool dfs(int u, int p ){
+    bool iscycle = false ;
+    visited[u] = true;
+    for( auto v : adj[u]){
+        if( v == p) continue;
+        if( visited[v] ) return true;
+        iscycle |= dfs(u,v);
+    }
+    return iscycle ;
+}
 
 int main(){
     int n , m ;
