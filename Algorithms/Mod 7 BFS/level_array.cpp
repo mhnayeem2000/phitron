@@ -34,7 +34,11 @@ int main(){
     int f,d;
     cin >> f >> d;
     bfs(f);
-    cout << level[d] << endl;
+    for( int i = 0 ; i < n ; i++){
+        if( level[i] == 2){
+            cout << i <<endl;
+        }
+    }
     return 0;
 }
 
