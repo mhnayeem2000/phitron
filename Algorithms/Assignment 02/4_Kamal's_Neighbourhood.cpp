@@ -29,24 +29,18 @@ int main(){
         int u , v; 
         cin >> u >> v ;
         adj[u].push_back(v);
-        adj[v].push_back(u);
+        //adj[v].push_back(u);
     }
-    int size;
-    cin >> size ;
     
-    for( int i = 0 ; i < size ; i++){
-        int f,d;
-        cin >> f >> d;
-        for( int j = 0 ; j < n ; j++){
-            visited[j] = false ;
-            level[j] = 0 ; 
-        }
-        bfs(f);
-        if( f == 0 && d == 0 )  cout << 0 << endl;
-        else if( level[d] == 0 ){
-            cout << -1 << endl;
-        } 
-        else cout << level[d] << endl;
+    int f;
+    cin >> f ;
+    for( int j = 0 ; j < n ; j++){
+        visited[j] = false ;
+        level[j] = 0 ; 
+    }
+    bfs(f);
+    for( int i = 0 ; i < n ; i++){
+        cout << level[i] << endl; 
     }
     
     return 0;
