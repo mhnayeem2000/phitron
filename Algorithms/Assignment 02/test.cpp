@@ -31,14 +31,17 @@ int main(){
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-    int f,d;
-    cin >> f >> d;
+    int f,d=1;
+    cin >> f ;
     bfs(f);
+    int count = 0;
     for( int i = 0 ; i < n ; i++){
-        if( level[i] == 2){
-            cout << i <<endl;
+        if( level[i] == 1){
+            count++;
+            //cout << i  << endl;
         }
     }
+    cout << count << endl;
     return 0;
 }
 
