@@ -1,18 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 const int N = 1e5+5;
-vector<int> adj[N];
+vector <int> adj[N];
 bool visited[N];
+vector <int> length;
 int ct = 0;
 void dfs(int u){
      visited[u] = true;
-     //cout << u << " ";
+     ct++;
      for( int v : adj[u]){
         if( visited[v]) continue;
         dfs(v);
-        ct++;
      }
-    cout << ct << " ";
 }
 int main(){
     int n,m;
@@ -23,32 +22,17 @@ int main(){
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-
-    int cc = 0;
-    for( int i = 0; i <n ; i++){
+    for( int i = 0; i <N ; i++){
         if( visited[i]) continue;
         dfs(i);
-        cc++;
+        length.push_back(ct);
+        ct = 0;
     }
-   //cout<< cc << endl;
+    sort(length.begin(),length.end());
+    for(int j : length){
+        if(j>1 ){
+            cout << j << " ";
+        }
+    }
     return 0;
 }
-
-
-
-/*
-
-10 
-9
-1 2
-1 3
-1 10
-2 4
-3 5
-3 6
-4 7
-4 8
-6 9
-
-1 2 4 7 8 3 5 6 9 10
-*/

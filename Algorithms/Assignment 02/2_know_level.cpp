@@ -9,7 +9,7 @@ void bfs( int s){
     queue<int> q;
     q.push(s);
     visited[s] = true;
-    level[s] =0;
+    level[s] = 0;
     while(!q.empty()){
         int u = q.front();
         q.pop();
@@ -32,17 +32,24 @@ int main(){
         adj[v].push_back(u);
     }
 
-    int f =0 ,d;
-    cin  >> d;
-    bfs(f);
-    bool fond = false ;
-    for( int i = 0 ; i < N ; i++){
-        if( d == 0) cout << 0 ;
-        else if( level[i] == d){
-            cout << i << " ";
-            fond = true ;
+    int f = 0, d;
+    cin >> d;
+
+    if(d == 0) {
+        cout << 0;
+    } else {
+        bfs(f);
+        bool found = false;
+        for(int i = 0; i < N; i++) {
+            if(level[i] == d){
+                cout << i << " ";
+                found = true;
+            }
+        }
+        if(!found) {
+            cout << -1;
         }
     }
-    if(!fond) cout << -1 ;
+    
     return 0;
 }

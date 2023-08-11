@@ -1,11 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int N = 100000;
+const int N = 100010;
 vector<int> adj[N];
 bool visited[N];
 int level[N];
 
 void bfs( int s){
+    for( int j = 0 ; j <=100010 ; j++){
+            visited[j] = false ;
+            level[j] = -1; 
+    }
     queue<int> q;
     q.push(s);
     visited[s] = true;
@@ -37,15 +41,8 @@ int main(){
     for( int i = 0 ; i < size ; i++){
         int f,d;
         cin >> f >> d;
-        for( int j = 0 ; j < n ; j++){
-            visited[j] = false ;
-            level[j] = 0 ; 
-        }
+        
         bfs(f);
-        if( f == 0 && d == 0 )  cout << 0 << endl;
-        else if( level[d] == 0 ){
-            cout << -1 << endl;
-        } 
         else cout << level[d] << endl;
     }
     
