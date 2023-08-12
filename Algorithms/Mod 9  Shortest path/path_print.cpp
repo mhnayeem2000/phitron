@@ -38,6 +38,7 @@ int main(){
     int s,d;
     cin>> s >> d;
     bfs(s);
+    cout << "Distance : " << level[d] << endl;
 
     vector<int> path;
     int curr = d;
@@ -46,6 +47,7 @@ int main(){
         curr = parent[curr];
     }
     reverse(path.begin(),path.end());
+    cout << "path : ";
     for(int node : path){
         cout << node << " ";
     }
