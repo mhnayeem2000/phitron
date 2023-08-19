@@ -21,7 +21,7 @@ void dijkstra(int s){
             int v = vpair.first;
             int w = vpair.second;
             if(visited[v]) continue;
-            if( dist[v] < dist[u]+ w ){
+            if( dist[v] > dist[u]+ w ){
                 dist[v] = dist[u]+ w;
                 pq.push({dist[v], v});
             }
@@ -37,10 +37,23 @@ int main(){
         adj[u].push_back({v,w});
         adj[v].push_back({u,w});
     }
-
-    dijkstra(1);
-    for(int i = 1; i <= n ; i++){
-        cout << dist[i] << " " ;
-    }
+    int start , end;
+    cin >> start >> end;
+    dijkstra(start);
+    cout << dist[end] ;
     return 0;
 }
+
+/*
+6 9
+1 2 5 
+2 3 2 
+1 3 10
+3 4 1 
+4 1 5 
+1 5 9 
+5 6 1 
+2 6 4 
+2 5 2
+4 6
+*/
