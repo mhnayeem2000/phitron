@@ -23,28 +23,21 @@ void dfs(int i , int j){
 }
 
 int main(){
-    int si,sj,di,dj;
+
     cin >> row >> col;
     for( int i=0; i<row; i++){
         string x;
         cin >> x;
         g.push_back(x);
     }
-    cin >> si >> sj;
-    cin >> di >> dj;
     for(int i = 0 ; i<row; i++){
         for(  int j =0 ; j < col ; j++){
-            if(g[si][sj] == '-') continue;
-            if(visited[si][sj]) continue;
-            dfs(si,sj);
+            if(g[i][j] == '-') continue;
+            if(visited[i][j]) continue;
+            dfs(i,j);
         }
     }
 
-    if (visited[di][dj]) {
-        cout << "YES" << endl;
-    } else {
-        cout << "NO" << endl;
-    }
 
     return 0;
 }
