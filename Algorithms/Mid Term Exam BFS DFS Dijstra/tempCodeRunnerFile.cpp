@@ -36,12 +36,20 @@ int main(){
         int u , v , w ; 
         cin >> u >> v >> w;
         adj[u].push_back({v,w});
+        adj[v].push_back({u,w});
     }
-    int start, end;
-    cin >> start >> end;
-    dijkstra(start);
-    cout << dist[end] << endl;
+    int start, end,dis,testcase;
+    cin >> start;
+    cin >> testcase;
+    for( int i = 0; i < testcase; i++ ){
+        cin >> end >> dis;
+        dijkstra(start);
+        if(dis == dist[end]){
+            cout << "YES" << endl;
+        }else cout << "NO" << endl;
+    }
 
+/*
     int cc = end;
     vector<int> path;
     while(cc != -1){
@@ -52,5 +60,8 @@ int main(){
     for(int p : path){
         cout << p << " ";
     }
+
+*/
+
     return 0;
 }
