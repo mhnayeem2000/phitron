@@ -48,6 +48,8 @@ int main(){
     int n , e;
     cin >> n >> e;
     vector<Edge> v;
+    vector<Edge> ans;
+    dsu_set(n);
     while(e--){
         int a, b , w;
         cin >> a >> b >> w;
@@ -55,8 +57,24 @@ int main(){
     }
     sort(v.begin(), v.end(),cmp);
     for( auto val: v){
-        cout<< val.a<<" "<< val.b<< " "<< val.w<<endl;
+        int a = val.a;
+        int b = val.b;
+        int w = val.w;
+        int leaderA = find(a);
+        int leaderB = find(b);
+        if( leaderA == leaderB) continue;
+        ans.push_back(val);
+        
+        ds_union(a,b);
     }
+    long long sum = 0;
+    for( auto val : ans){
+        sum += (long long)val.w;
+    }
+    if(ans.size() == n-1){
+        cout << sum << endl;
+    }else cout << -1 << endl;
+    
     return 0;
 }
 
