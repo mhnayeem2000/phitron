@@ -35,7 +35,6 @@ void bellman( int s){
             }
         }
     }
-
 }
 
 
