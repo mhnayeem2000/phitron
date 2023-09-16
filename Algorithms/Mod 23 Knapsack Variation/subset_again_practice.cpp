@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+int dp[1005][1005];
 bool subset_sum(int arr[], int n , int s){
     //base case
     if( n == 0){
@@ -9,11 +9,15 @@ bool subset_sum(int arr[], int n , int s){
         }
         else  return false;
     }
+    if(dp[n][s] == -1) return dp[n][s];
     if( arr[n-1] <= s){
 
         bool opt1 = subset_sum(arr,n-1,s-arr[n-1]);
         bool opt2 = subset_sum(arr,n-1 , s);
-        return opt1 || opt2;
+        return  dp[n][s] = opt1 || opt2;
+    }
+    else {
+        return dp[n][s] = subset_sum(arr,n-1, s);
     }
 }
 int main(){
