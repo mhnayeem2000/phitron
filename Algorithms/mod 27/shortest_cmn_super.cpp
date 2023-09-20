@@ -23,3 +23,8 @@ int main(){
     cout << (n+m) - dp[n][m] << endl;
     return 0;
 }
+
+/*
+ckkgcd
+kxgxcyd
+*/
