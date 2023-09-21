@@ -5,10 +5,13 @@ int main()
     int test;
     cin >> test;
     while(test--){
-            string a, b;
-    cin >> a >> b;
+        string a;
+    cin >> a;
     int n = a.size();
+    string b = a;
+    reverse(b.begin(), b.end());
     int m = b.size();
+
     int dp[n + 1][m + 1];
     for (int i = 0; i <= n; i++)
     {
@@ -32,7 +35,31 @@ int main()
             }
         }
     }
-    cout << n + m - dp[n][m] << endl;
+    int i = n, j = m;
+    string ans;
+    while (i != 0 && j != 0)
+    {
+        if (a[i - 1] == b[j - 1])
+        {
+            ans += a[i - 1];
+            i--;
+            j--;
+        }
+        else
+        {
+            if (dp[i][j - 1] > dp[i - 1][j])
+            {
+                j--;
+            }
+            else
+            {
+                i--;
+            }
+        }
+    }
+    reverse(ans.begin(), ans.end());
+    int f = ans.size();
+    cout << n - f << endl;
     }
     return 0;
 }
