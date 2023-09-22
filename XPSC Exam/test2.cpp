@@ -1,48 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
-int dp[1005][1005];
-int knapsack(int n, int s, int v[], int w[])
+const int N = 1e5 + 5;
+int dis[N];
+bool vis[N];
+vector<int> v[N];
+void bfs(int src)
 {
-    // base case
-    if (n == 0 || s == 0)
-        return 0;
-    if (dp[n][s] != -1)
+    queue<int> q;
+    q.push(src);
+    vis[src] = true;
+    dis[src] = 0;
+
+    while (!q.empty())
     {
-        return dp[n][s];
-    }
-    if (w[n - 1] <= s)
-    {
-        int op1 = knapsack(n - 1, s - w[n - 1], v, w) + v[n - 1];
-        int op2 = knapsack(n - 1, s, v, w);
-        return dp[n][s] = max(op1, op2);
-    }
-    else
-    {
-        return dp[n][s] = knapsack(n - 1, s, v, w);
+        int parent = q.front();
+        q.pop();
+        cout << parent << endl;
+        for (int i = 0; i < v[parent].size(); i++)
+        {
+            int child = v[parent][i];
+            if (vis[child] == false)
+            {
+                q.push(child);
+                dis[child] = dis[parent] + 1;
+                vis[child] = true;
+            }
+        }
     }
 }
 int main()
 {
-    int n;
-    cin >> n;
-    int v[n], w[n];
-    for (int i = 0; i < n; i++)
+    int n, e;
+    cin >> n >> e;
+    while (e--)
     {
-        cin >> v[i];
+        int a, b;
+        cin >> a >> b;
+        v[a].push_back(b);
+        v[b].push_back(a);
     }
-    for (int i = 0; i < n; i++)
+    bfs(1);
+    for (int i = 1; i <= n; i++)
     {
-        cin >> w[i];
+        cout << "Node " << i << ": " << dis[i] << endl;
     }
-    int s;
-    cin >> s;
-    for (int i = 0; i <= n; i++)
-    {
-        for (int j = 0; j <= s; j++)
-        {
-            dp[i][j] = -1;
-        }
-    }
-    cout << knapsack(n, s, v, w);
     return 0;
 }
