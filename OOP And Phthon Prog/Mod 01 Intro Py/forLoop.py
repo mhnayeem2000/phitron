@@ -3,5 +3,4 @@ sum = 0
 for n in numbers:
     if(n % 2 == 1):
         sum = sum +n
-
 print(sum)
