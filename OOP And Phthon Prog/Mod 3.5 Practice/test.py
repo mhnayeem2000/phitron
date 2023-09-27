@@ -6,4 +6,6 @@ for i in range(0,test):
     if lst == rev :
         print("YES")
         break
-    else : print("NO") 
+    else : 
+        print("NO")
+        break
