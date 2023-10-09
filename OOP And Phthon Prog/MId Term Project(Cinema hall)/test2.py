@@ -31,7 +31,7 @@ class Hall(Star_Cinema):
                 if self.__seats[id][row][col] == 0:
                     self.__seats[id][row][col] = 1
                 else:
-                    print("Seat at row {} and column {} is already booked.".format(row, col))
+                    print(f"Seat at row {row} and column {col} is already booked.")
             else:
                 print("Invalid seat selection at row {} and column {}.".format(row, col))
 
