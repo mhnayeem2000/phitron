@@ -48,7 +48,9 @@ class Info:
             print("2. Create New account")
             print("3. Transfer Amount")
             print("4. Admin Options")
-            print("5. Exit")
+            print("5. Check balance")
+            print("6. Exit")
+
             schoices = input("Enter Your Choice: ")
 
             if schoices == "1":
@@ -60,10 +62,12 @@ class Info:
             elif schoices == "3":
                 self.transfer_amount()
             elif schoices == "4":
-                self.admin_options()
-            elif schoices == "5":
+                self.admin_options()    
+            elif schoices == "6":
                 print("Exiting. Goodbye!")
                 break
+            elif schoices == "5":
+                self.get_balance() 
             else:
                 print("Invalid choice. Please try again.")
 
@@ -131,6 +135,15 @@ class Info:
         receiver.deposit(amount)
         print(f"Successfully transferred {amount} from {sender_name} to {receiver_name}.")
 
+    def get_balance(self):
+        acc_number = input("Enter your account number: ")
+        for account in Info.all_accounts:
+            if acc_number.lower() in account.name.lower():
+                account.get_balance()
+                break
+        else:
+            print("Account not found.")
+
     def admin_options(self):
         admin = Admin()
 
@@ -162,7 +175,7 @@ class Info:
                 admin.check_total_loan_amount()
             elif admin_choice == "6":
                 loan_toggle_choice = input("Do you want to enable or disable the loan feature (ON/OFF): ")
-                admin.toggle_loan_feature(loan_toggle_choice.upper() == "ON")
+                admin.toggle_loan_feature(loan_toggle_choice == "ON")
             elif admin_choice == "7":
                 break
             else:
@@ -198,7 +211,7 @@ class Admin:
         print(f"Total Available Balance in the bank: {total_balance}")
 
     def check_total_loan_amount(self):
-        total_loan_amount = 0  # Placeholder for calculating the total loan amount
+        total_loan_amount = 0 
         print(f"Total Loan Amount in the bank: {total_loan_amount}")
 
     def toggle_loan_feature(self, enable):
