@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/User/Desktop/phitron",
-      "program": "c:/Users/User/Desktop/phitron/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
