@@ -1,24 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int test;
-    cin >> test;
-        string st;
-        cin >> st;
-        int ocount= 0,mcount = 0,xcount = 0;
-        for(int i = 0; i <st.length(); i++){
-            if(st[i] == 'o'){
-                ocount++;
-            }
-            if(st[i] == '-'){
-                mcount++;
-            }
-            if(st[i] == 'x'){
-                xcount++;
-            }
-        }
-        if( ocount > 0 && mcount >= 0 && xcount == 0){
-            cout << "Yes" << endl;
-        }else cout << "No" << endl;
+    int n;
+    cin >> n;
+    string st;
+    cin >> st;  
+    int tcount = 0 , acount = 0;
+    for(int i = 0; i < st.length(); i++){
+        if(st[i] == 'T'){
+            tcount++;
+        }else acount++;
+    }
+    if( tcount > acount ) cout <<< "T" << endl;
+    else cout << "A" << endl;
     return 0;
 }
