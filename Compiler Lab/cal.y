@@ -4,19 +4,19 @@ void yyerror(char* s);
 int yylex();
 %}
 
-%%
 
 %token NUM ADD SUB
 %start cal
 
 %%
 
-cal : 
+cal : NUM ADD NUM ; 
 
 %%
 
 int main(){
     yyparse();
+    printf("Parsing successful \n");
 }
 
 void yyerror(char* s){
