@@ -10,7 +10,7 @@ number ({digit}+)
 
 %%
 {ws} {}
-{number} {yylval = atoi(yytext);}
+{number} {yylval = atoi(yytext); return(NUM);}
 "+" {return(ADD);}
 "-" {return(SUB);}
 %%
