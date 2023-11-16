@@ -57,3 +57,13 @@
     bottom: -400px;
     position: absolute;
 }
+.ipadimg{
+    margin: left  ;
+}
+.second_section_container{
+    display: flex;
+}
+
+.top_section{
+    display: flex;
+}
