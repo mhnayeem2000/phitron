@@ -48,7 +48,9 @@ extern int yydebug;
    enum yytokentype {
      NUM = 258,
      ADD = 259,
-     SUB = 260
+     SUB = 260,
+     MUL = 261,
+     DIV = 262
    };
 #endif
 

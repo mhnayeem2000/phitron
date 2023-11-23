@@ -5,7 +5,7 @@ int yylex();
 %}
 
 
-%token NUM ADD SUB
+%token NUM ADD SUB MUL DIV
 %start cal
 
 %%
