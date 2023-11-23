@@ -15,5 +15,7 @@ number ({digit}+)
 {number} {yylval = atoi(yytext); return(NUM);}
 "+" {return(ADD);}
 "-" {return(SUB);}
+"*" {return(MUL);}
+"/" {return(DIV);}
 
 %%

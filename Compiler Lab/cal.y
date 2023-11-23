@@ -10,7 +10,11 @@ int yylex();
 
 %%
 
-cal : NUM ADD NUM ; 
+cal : NUM ADD NUM
+    | NUM SUB NUM
+    | NUM MUL NUM
+    | NUM DIV NUM
+    ; 
 
 %%
 
