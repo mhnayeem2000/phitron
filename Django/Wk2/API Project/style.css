@@ -1,0 +1,38 @@
+.search_box{
+    padding: 20px;
+    background-color: beige;
+    width: 400px;
+    height: 520px;
+    position: absolute;
+    top:100px;
+    left: 250px;
+    margin-bottom: 100px;
+}
+.container_src{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.search_input{
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+#src_btn{
+    border: none;
+    outline: none;
+    padding:10px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+#ttl_ml{
+    color: red;
+    
+}
