@@ -5,15 +5,22 @@ int yylex();
 %}
 
 
-%token NUM ADD SUB MUL DIV
+%token NUM ADD SUB MUL DIV SEMI ASSIGN ID IF EQUAL LP RP RCB LCB
 %start cal
+%left ADD SUB
+%left MUL DIV
 
 %%
 
-cal : NUM ADD NUM
-    | NUM SUB NUM
-    | NUM MUL NUM
-    | NUM DIV NUM
+cal : ID ASSIGN NUM SEMI 
+    |exp
+
+    ;
+exp : exp ADD exp
+    | exp SUB exp
+    | exp MUL exp
+    | exp DIV exp
+    | NUM
     ; 
 
 %%

@@ -50,7 +50,10 @@ extern int yydebug;
      ADD = 259,
      SUB = 260,
      MUL = 261,
-     DIV = 262
+     DIV = 262,
+     SEMI = 263,
+     ASSIGN = 264,
+     ID = 265
    };
 #endif
 
