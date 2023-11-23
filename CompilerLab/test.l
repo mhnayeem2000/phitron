@@ -4,7 +4,7 @@
     #include "cal.tab.h"
 %}
 
-delim [\t]
+delim [ \t\n]
 ws {delim}+
 digit [0-9]
 number ({digit}+)

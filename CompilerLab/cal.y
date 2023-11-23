@@ -12,7 +12,8 @@ int yylex();
 
 %%
 
-cal : ID ASSIGN NUM SEMI 
+cal :IF LP ID EQUAL NUM RP LCB id_dec RCB
+|id_dec:ID ASSIGN exp SEMI 
     |exp
 
     ;
