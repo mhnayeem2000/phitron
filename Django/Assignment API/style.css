@@ -66,7 +66,6 @@ body {
 }
 .all_thumbnails img {
     width: 100%;
-    height: 50%;
 }
 .identity_section,.name_badge{
     display: flex;
@@ -78,15 +77,16 @@ body {
     border-radius: 50%;
 }
 
-.banner_img{
+.banner_img {
     position: relative;
     border-radius: 5px;
+    height: 210px;
 }
 
 .post_time {
     position: absolute;
-    left: 81%;
-    top: 44%;
+    left: 70%;
+    top: 60%;
     background: #000000b8;
     padding: 2px;
     color: white;
@@ -102,4 +102,18 @@ body {
 .auth_badge img{
     width: 70%;
     margin-left: 5px;
+}
+
+.notice{
+    font-size: 30px;
+}
+.iconimg {
+    width: 14% !important;
+    height: 202px;
+    margin: auto;
+}
+
+button:active{
+    background-color: aqua;
+    color: black;
 }

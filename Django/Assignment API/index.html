@@ -18,7 +18,7 @@
                 <button class="button">Sort By View</button>
             </div>
             <div class="col-md-4 blog">
-                <button class="active_btn" onclick="loadData()" >Blog</button>
+                <button class="active_btn"  >Blog</button>
             </div>
             
         </div>
@@ -26,20 +26,16 @@
 
     <div class="tab_section">
         <div class="four_tabs">
-            <button class="active_btn">All</button>
-            <button class="button">Music</button>
-            <button class="button">Comedy</button>
-            <button class="button">Drawing</button>
+            <button class="active_btn" onclick="loadData('1000')">All</button>
+            <button class="button" onclick="loadData('1001')">Music</button>
+            <button class="button" onclick="loadData('1003')">Comedy</button>
+            <button class="button" onclick="loadData('1005')">Drawing</button>
         </div>
     </div>
     
-
-
     <section class="thumnail_section" >
-        <div class="all_thumbnails row">
-            <div  id="dynamic_box" class="d-flex">
+        <div class="all_thumbnails row" id="dynamic_box" class="d-flex">
 
-            </div>
         </div>
     </section>         
 
