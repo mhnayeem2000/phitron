@@ -1,12 +1,17 @@
-const loadData = (id)=>{
+const loadData = (id) => {
     fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
-    .then((res) => res.json())
-    .then((data) => displayData(data.data));
- };
+        .then((res) => res.json())
+        .then((data) => {
+            originalData = data.data; 
+            displayData(originalData);
+        });
+};
 loadData(1000);
  const dynamic_box = document.getElementById("dynamic_box");
  const displayData = (data) => {
     dynamic_box.innerHTML = '';
+    
+
     if(data.length == 0){
         const noDataMessage = document.createElement("div");
         noDataMessage.className = "col-md-12 text-center";
@@ -51,3 +56,27 @@ loadData(1000);
         });
     }
 };
+
+const sortDataByViews = (order) => {
+    const sortedData = [...originalData];
+    sortedData.sort((a, b) => {
+        const viewsA = parseInt(a.others.views.replace('K', '000'));
+        const viewsB = parseInt(b.others.views.replace('K', '000'));
+
+        if (order === 'asc') {
+            return viewsA - viewsB; 
+        } else {
+            return viewsB - viewsA; 
+        }
+    });
+    displayData(sortedData);
+};
+
+const sortButton = document.querySelector('.sort .button');
+let sortOrder = 'asc'; 
+sortButton.addEventListener('click', () => {
+    sortOrder = sortOrder === 'asc' ? 'desc' : 'asc'; 
+    sortDataByViews(sortOrder);
+});
+
+
