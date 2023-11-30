@@ -18,8 +18,6 @@ statement:ID DECREMENT SEMI
     | ID ASSIGN ID ADD NUM SEMI
     |exp
     ;
-//cal :IF LP ID EQUAL NUM RP LCB id_dec RCB
-//|id_dec:ID ASSIGN exp SEMI 
     
 
 exp : exp ADD exp
