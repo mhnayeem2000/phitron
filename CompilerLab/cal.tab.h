@@ -47,13 +47,22 @@ extern int yydebug;
       know about them.  */
    enum yytokentype {
      NUM = 258,
-     ADD = 259,
-     SUB = 260,
-     MUL = 261,
-     DIV = 262,
-     SEMI = 263,
-     ASSIGN = 264,
-     ID = 265
+     DECREMENT = 259,
+     ADD = 260,
+     NOTEQUAL = 261,
+     SUB = 262,
+     MUL = 263,
+     DIV = 264,
+     SEMI = 265,
+     ASSIGN = 266,
+     ID = 267,
+     IF = 268,
+     EQUAL = 269,
+     WHILE = 270,
+     LP = 271,
+     RP = 272,
+     RCB = 273,
+     LCB = 274
    };
 #endif
 

@@ -16,6 +16,7 @@ id ({us}|{letter})({letter}|{us}|{digit})({digit})*
 
 {ws} {}
 {number} {yylval = atoi(yytext); return(NUM);}
+"while" {return(WHILE);}
 "if" {return(IF);}
 {id} {return(ID);}
 "=" {return(ASSIGN);}
@@ -29,4 +30,6 @@ id ({us}|{letter})({letter}|{us}|{digit})({digit})*
 ")" {return(RP);}
 "{" {return(LCB);}
 "}" {return(RCB);}
+"!=" {return(NOTEQUAL);}
+"--" {return(DECREMENT);}
 %%
