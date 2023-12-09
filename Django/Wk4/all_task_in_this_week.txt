@@ -1,0 +1,4 @@
+1. Practice 14.5 : https://github.com/mhnayeem2000/phitron/tree/master/Django/Wk4/practice2
+2. practice 15.5 : https://github.com/mhnayeem2000/phitron/tree/master/Django/Wk4/practice1
+3. Doc file : https://docs.google.com/document/d/1zw24LDHPfvJrIrNJhOCzWgcXsQFYT3sbzVzJMI8QtvE/edit?usp=sharing
+4. Assignment 4 : https://github.com/mhnayeem2000/phitron/tree/master/Django/Wk4/assignment4
