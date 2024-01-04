@@ -1,7 +1,7 @@
 %option noyywrap
 
 %{
-    #include "cal.tab.h"
+    #include "problem1.tab.h"
 %}
 
 delim [ \t\n]
@@ -16,7 +16,6 @@ id ({us}|{letter})({letter}|{us}|{digit})({digit})*
 
 {ws} {}
 {number} {yylval = atoi(yytext); return(NUM);}
-"while" {return(WHILE);}
 "float" {return(FLOAT);}
 "printf" {return(PRINTF);}
 "scanf" {return(SCANF);}
@@ -32,7 +31,6 @@ id ({us}|{letter})({letter}|{us}|{digit})({digit})*
 "%" {return(PERC);}
 "+" {return(ADD);}
 "'" {return(SEMECS);}
-"'" {return(SEMECF);}
 "-" {return(SUB);}
 "*" {return(MUL);}
 "/" {return(DIV);}
@@ -41,5 +39,4 @@ id ({us}|{letter})({letter}|{us}|{digit})({digit})*
 "{" {return(LCB);}
 "}" {return(RCB);}
 "!=" {return(NOTEQUAL);}
-"--" {return(DECREMENT);}
 %%
